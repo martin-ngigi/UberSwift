@@ -12,6 +12,7 @@ import MapKit
 struct UberMapViewRepresentable: UIViewRepresentable{
     let mapView = MKMapView()
     let locationManager = LocationManager()
+    @EnvironmentObject var locationSearchViewModel : LocationSearchViewModel // check App/UberSwiftApp.swift
     
     /**
      Responsible for making the map view
@@ -26,7 +27,9 @@ struct UberMapViewRepresentable: UIViewRepresentable{
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        
+        if let selectedLocation = locationSearchViewModel.selectedLocation{
+            print("DEBUG: UberMapViewRepresentable->updateUIView. Selected location in mapview is \(selectedLocation)")
+        }
     }
     
     func makeCoordinator() -> MapCoordinator {
