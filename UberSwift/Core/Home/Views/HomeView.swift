@@ -9,28 +9,31 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var showLocationSearchView = false
+    /**
+     mapstate is more feasible/ideal compared to boolean property. i.e. incase of a boolean sceanario where we have 5 booleans , and one changes to true, we would be forced to change others to false.
+     */
+    @State private var mapState = MapViewState.noInput
     
     var body: some View {
         ZStack(alignment: .top) {
             
-            UberMapViewRepresentable()
+            UberMapViewRepresentable(mapState: $mapState)
                 .ignoresSafeArea()
             
-            if showLocationSearchView {
-                LocationSearchView(showLocationSearchView: $showLocationSearchView)
+            if mapState == .searchingForLocation {
+                LocationSearchView(mapState: $mapState)
             }
-            else {
+            else  if mapState == .noInput {
                 LocationActivationSearchView()
                     .padding(.top, 72)
                     .onTapGesture {
                         withAnimation(.bouncy()){
-                            showLocationSearchView.toggle()
+                            mapState = .searchingForLocation
                         }
                     }
             }
             
-            MapViewActionButton(showLocationSearchView: $showLocationSearchView)
+            MapViewActionButton(mapState: $mapState)
                 .padding(.leading)
                 .padding(.top, 4)
         }

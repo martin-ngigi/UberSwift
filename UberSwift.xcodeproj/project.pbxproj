@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A300BF162B4D3E4F00DB2217 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A300BF152B4D3E4F00DB2217 /* MapViewState.swift */; };
 		A35CFE0D2B4BBEC5004BCFBB /* UberSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CFE0C2B4BBEC5004BCFBB /* UberSwiftApp.swift */; };
 		A35CFE112B4BBEC8004BCFBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35CFE102B4BBEC8004BCFBB /* Assets.xcassets */; };
 		A35CFE152B4BBEC8004BCFBB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A35CFE142B4BBEC8004BCFBB /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A300BF152B4D3E4F00DB2217 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		A35CFE092B4BBEC5004BCFBB /* UberSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A35CFE0C2B4BBEC5004BCFBB /* UberSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberSwiftApp.swift; sourceTree = "<group>"; };
 		A35CFE102B4BBEC8004BCFBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		A35CFE1F2B4BC1E1004BCFBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A300BF152B4D3E4F00DB2217 /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				A35CFE2A2B4BC6A2004BCFBB /* LocationManager.swift in Sources */,
 				A35CFE342B4BEA45004BCFBB /* LocationActivationSearchView.swift in Sources */,
 				A35CFE0D2B4BBEC5004BCFBB /* UberSwiftApp.swift in Sources */,
+				A300BF162B4D3E4F00DB2217 /* MapViewState.swift in Sources */,
 				A35CFE262B4BC24F004BCFBB /* HomeView.swift in Sources */,
 				A35CFE312B4BEA28004BCFBB /* LocationSearchViewModel.swift in Sources */,
 				A35CFE382B4BEE4C004BCFBB /* LocationSearchView.swift in Sources */,

@@ -12,6 +12,7 @@ import MapKit
 struct UberMapViewRepresentable: UIViewRepresentable{
     let mapView = MKMapView()
     let locationManager = LocationManager()
+    @Binding var mapState: MapViewState
     @EnvironmentObject var locationSearchViewModel : LocationSearchViewModel // check App/UberSwiftApp.swift
     
     /**
@@ -27,10 +28,20 @@ struct UberMapViewRepresentable: UIViewRepresentable{
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        if let coordinate = locationSearchViewModel.selectedLocationCoordinate{
-            print("DEBUG: UberMapViewRepresentable->updateUIView. Selected coordinates in mapview is \(coordinate)")
-            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
-            context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
+        print("DEBUG: Map state is \(mapState)")
+        
+        switch mapState {
+        case .noInput:
+            context.coordinator.clearMapViewAndRecenterOnUserLocation()
+        case .searchingForLocation:
+            break
+        case .locationSelected:
+            if let coordinate = locationSearchViewModel.selectedLocationCoordinate{
+                print("DEBUG: UberMapViewRepresentable->updateUIView. Selected coordinates in mapview is \(coordinate)")
+                context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
+                context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
+            }
+            break
         }
     }
     
@@ -44,8 +55,10 @@ extension UberMapViewRepresentable{
      MapCoordinator is like a link between the UIKit and SwiftUi. Since UIkit doesn't have all the functionalites to support the maps.
      **/
     class MapCoordinator: NSObject, MKMapViewDelegate {
+        // MARK: Properties
         let parent: UberMapViewRepresentable
         var userLocationCoordinate: CLLocationCoordinate2D?
+        var currentRegion: MKCoordinateRegion?
         
         // MARK: - Lifecycle
         init(parent: UberMapViewRepresentable) {
@@ -63,6 +76,8 @@ extension UberMapViewRepresentable{
                 center: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             )
+            
+            self.currentRegion = region
             
             parent.mapView.setRegion(region, animated: true)
         }
@@ -123,28 +138,15 @@ extension UberMapViewRepresentable{
                 guard let route = response?.routes.first else { return }
                 completion(route)
             }
+        }
+        
+        func clearMapViewAndRecenterOnUserLocation(){
+            parent.mapView.removeAnnotations(parent.mapView.annotations)
+            parent.mapView.removeOverlays(parent.mapView.overlays)
             
-//            let request = MKDirections.Request()
-//            request.source = MKMapItem.forCurrentLocation()
-//            let destPlacemark = MKPlacemark(coordinate: destination)
-//            request.destination = MKMapItem(placemark: destPlacemark)
-//            request.requestsAlternateRoutes = false
-//
-//            let directions = MKDirections(request: request)
-//            
-//            directions.calculate(completionHandler: {(response, error) in
-//                print ("RESPONSE: \(response)")
-//                if error != nil {
-//                    print("Failed getting directions with Error \(error?.localizedDescription)")
-//                } else {
-//                    if let route = response?.routes.first {
-//                        completion(route)
-//                    } else {
-//                        print("No routes found")
-//                    }
-//                }
-//            })
-            
+            if let currentRegion = currentRegion {
+                parent.mapView.setRegion(currentRegion, animated: true)
+            }
         }
     }
 }

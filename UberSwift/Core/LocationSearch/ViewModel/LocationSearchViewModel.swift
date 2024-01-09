@@ -17,6 +17,7 @@ class LocationSearchViewModel: NSObject, ObservableObject{
     private let searchCompleter = MKLocalSearchCompleter()
     var queryFragment: String = "" {
         didSet {
+            // Query fragment is the destination address that user types, has onTap listener that listens to keyboard as user keeps on keying in.
             print("DEBUG: Query fragment is \(queryFragment)")
             searchCompleter.queryFragment = queryFragment
         }
