@@ -29,6 +29,7 @@ struct UberMapViewRepresentable: UIViewRepresentable{
     func updateUIView(_ uiView: UIViewType, context: Context) {
         if let coordinate = locationSearchViewModel.selectedLocationCoordinate{
             print("DEBUG: UberMapViewRepresentable->updateUIView. Selected coordinates in mapview is \(coordinate)")
+            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
         }
     }
     
@@ -44,6 +45,7 @@ extension UberMapViewRepresentable{
     class MapCoordinator: NSObject, MKMapViewDelegate {
         let parent: UberMapViewRepresentable
         
+        // MARK: - Lifecycle
         init(parent: UberMapViewRepresentable) {
             self.parent = parent
             super.init()
@@ -52,6 +54,7 @@ extension UberMapViewRepresentable{
         /** 
          Responsible for zoom area we want to view when user allows app to access the location.
          **/
+        // MARK: MKMapViewDelegate
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
             let region = MKCoordinateRegion(
                 center: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
@@ -59,6 +62,20 @@ extension UberMapViewRepresentable{
             )
             
             parent.mapView.setRegion(region, animated: true)
+        }
+        
+        // MARK: Helpers
+        /**
+         For adding map annotations i.e. map icon
+         */
+        func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D){
+            parent.mapView.removeAnnotations(parent.mapView.annotations)// remove previous annotations. i.e. if one had search previous, there is the previous icon which is not necessary.
+            let anno = MKPointAnnotation()
+            anno.coordinate = coordinate
+            parent.mapView.addAnnotation(anno)
+            parent.mapView.selectAnnotation(anno, animated: true)
+            
+            parent.mapView.showAnnotations(parent.mapView.annotations, animated: true) // move the map to where one has searched
         }
     }
 }
