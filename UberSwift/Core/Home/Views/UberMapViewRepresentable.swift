@@ -123,6 +123,28 @@ extension UberMapViewRepresentable{
                 guard let route = response?.routes.first else { return }
                 completion(route)
             }
+            
+//            let request = MKDirections.Request()
+//            request.source = MKMapItem.forCurrentLocation()
+//            let destPlacemark = MKPlacemark(coordinate: destination)
+//            request.destination = MKMapItem(placemark: destPlacemark)
+//            request.requestsAlternateRoutes = false
+//
+//            let directions = MKDirections(request: request)
+//            
+//            directions.calculate(completionHandler: {(response, error) in
+//                print ("RESPONSE: \(response)")
+//                if error != nil {
+//                    print("Failed getting directions with Error \(error?.localizedDescription)")
+//                } else {
+//                    if let route = response?.routes.first {
+//                        completion(route)
+//                    } else {
+//                        print("No routes found")
+//                    }
+//                }
+//            })
+            
         }
     }
 }
