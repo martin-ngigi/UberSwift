@@ -39,6 +39,7 @@ struct HomeView: View {
                     .padding(.top, 4)
             }
             
+            // Show RideRequestView only if user has selected the location
             if mapState == .locationSelected {
                 RideRequestView()
                     .transition(.move(edge: .bottom))
