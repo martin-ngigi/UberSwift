@@ -13,6 +13,7 @@ struct HomeView: View {
      mapstate is more feasible/ideal compared to boolean property. i.e. incase of a boolean sceanario where we have 5 booleans , and one changes to true, we would be forced to change others to false.
      */
     @State private var mapState = MapViewState.noInput
+    @EnvironmentObject var locationViewMocel : LocationSearchViewModel
     
     var body: some View {
         ZStack (alignment: .bottom) {
@@ -46,6 +47,9 @@ struct HomeView: View {
             }
         }
         .edgesIgnoringSafeArea(.bottom)
+        .onReceive(LocationManager.shared.$userLocation)  { location in
+            locationViewMocel.userLocation = location
+        }
         
         
     }
