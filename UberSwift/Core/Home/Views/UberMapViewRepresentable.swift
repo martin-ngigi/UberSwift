@@ -103,7 +103,7 @@ extension UberMapViewRepresentable{
             parent.mapView.addAnnotation(anno)
             parent.mapView.selectAnnotation(anno, animated: true)
             
-            parent.mapView.showAnnotations(parent.mapView.annotations, animated: true) // move the map to where one has searched
+            //parent.mapView.showAnnotations(parent.mapView.annotations, animated: true) // move the map to where one has searched
         }
         
         /**
@@ -114,6 +114,10 @@ extension UberMapViewRepresentable{
             getDestinationRoute(from: userLocationCoordinate,
                                 to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
+                
+                // configure the view of card where the map will displayed. i.e. the height and with map to make it fit on the UI. Putting into consideration that there is UI below this Map for selecting uber and making payments.
+                let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))
+                self.parent.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
             }
         }
         
