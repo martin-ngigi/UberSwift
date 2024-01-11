@@ -22,6 +22,7 @@
 		A35CFE362B4BED50004BCFBB /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CFE352B4BED50004BCFBB /* MapViewActionButton.swift */; };
 		A35CFE382B4BEE4C004BCFBB /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CFE372B4BEE4C004BCFBB /* LocationSearchView.swift */; };
 		A35CFE3A2B4BF28A004BCFBB /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CFE392B4BF28A004BCFBB /* LocationSearchResultCell.swift */; };
+		A3B6AABB2B4FAF4600796CE4 /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6AABA2B4FAF4600796CE4 /* UberLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A35CFE352B4BED50004BCFBB /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 		A35CFE372B4BEE4C004BCFBB /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		A35CFE392B4BF28A004BCFBB /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
+		A3B6AABA2B4FAF4600796CE4 /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				A300BF152B4D3E4F00DB2217 /* MapViewState.swift */,
 				A33E4E132B4E7447005ABEB8 /* RideType.swift */,
+				A3B6AABA2B4FAF4600796CE4 /* UberLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				A35CFE312B4BEA28004BCFBB /* LocationSearchViewModel.swift in Sources */,
 				A35CFE382B4BEE4C004BCFBB /* LocationSearchView.swift in Sources */,
 				A35CFE3A2B4BF28A004BCFBB /* LocationSearchResultCell.swift in Sources */,
+				A3B6AABB2B4FAF4600796CE4 /* UberLocation.swift in Sources */,
 				A35CFE282B4BC2EF004BCFBB /* UberMapViewRepresentable.swift in Sources */,
 				A35CFE362B4BED50004BCFBB /* MapViewActionButton.swift in Sources */,
 				A33E4E142B4E7447005ABEB8 /* RideType.swift in Sources */,

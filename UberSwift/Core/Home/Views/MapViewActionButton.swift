@@ -40,7 +40,7 @@ struct MapViewActionButton: View {
             case .locationSelected:
                 //print("DEBUG: Clear map view")
                 mapState = .noInput
-                viewModel.selectedLocationCoordinate = nil
+                viewModel.selectedUberLocation = nil
             
         }
     }
