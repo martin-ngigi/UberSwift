@@ -95,8 +95,8 @@ struct RideRequestView: View {
                             
                         }
                         .frame(width: 112, height: 140)
-                        .foregroundColor(type == selectedRideType ? .white : .black)
-                        .background(Color(type == selectedRideType ? .systemBlue : .systemGroupedBackground))
+                        .foregroundColor(type == selectedRideType ? .white : Color.theme.primaryTextColor)
+                        .background(type == selectedRideType ? .blue : Color.theme.secondaryBackgroundColor)
                         .scaleEffect(type == selectedRideType ? 1.2 : 1.0)
                         .cornerRadius(10)
                         .onTapGesture{
@@ -133,7 +133,7 @@ struct RideRequestView: View {
                     .padding()
             }
             .frame(height: 50)
-            .background(Color(.systemGroupedBackground))
+            .background(Color.theme.secondaryBackgroundColor) // check Assets and Extensions/Color
             .cornerRadius(10)
             .padding(.horizontal)
             
@@ -150,7 +150,7 @@ struct RideRequestView: View {
             }
         }
         .padding(.bottom, 24)
-        .background(.white)
+        .background(Color.theme.backgroundColor) // check Assets and Extensions/Color
         .cornerRadius(16)
 
     }

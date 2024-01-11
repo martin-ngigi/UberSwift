@@ -41,7 +41,7 @@ struct HomeView: View {
             }
             
             // Show RideRequestView only if user has selected the location
-            if mapState == .locationSelected {
+            if mapState == .locationSelected || mapState == .polylineAdded {
                 RideRequestView()
                     .transition(.move(edge: .bottom))
             }

@@ -23,6 +23,7 @@
 		A35CFE382B4BEE4C004BCFBB /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CFE372B4BEE4C004BCFBB /* LocationSearchView.swift */; };
 		A35CFE3A2B4BF28A004BCFBB /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CFE392B4BF28A004BCFBB /* LocationSearchResultCell.swift */; };
 		A3B6AABB2B4FAF4600796CE4 /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6AABA2B4FAF4600796CE4 /* UberLocation.swift */; };
+		A3B6AABD2B4FB8E000796CE4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6AABC2B4FB8E000796CE4 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		A35CFE372B4BEE4C004BCFBB /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		A35CFE392B4BF28A004BCFBB /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 		A3B6AABA2B4FAF4600796CE4 /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
+		A3B6AABC2B4FB8E000796CE4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				A32F6B3E2B4E9A9400D1D552 /* Double.swift */,
+				A3B6AABC2B4FB8E000796CE4 /* Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				A300BF162B4D3E4F00DB2217 /* MapViewState.swift in Sources */,
 				A35CFE262B4BC24F004BCFBB /* HomeView.swift in Sources */,
 				A35CFE312B4BEA28004BCFBB /* LocationSearchViewModel.swift in Sources */,
+				A3B6AABD2B4FB8E000796CE4 /* Color.swift in Sources */,
 				A35CFE382B4BEE4C004BCFBB /* LocationSearchView.swift in Sources */,
 				A35CFE3A2B4BF28A004BCFBB /* LocationSearchResultCell.swift in Sources */,
 				A3B6AABB2B4FAF4600796CE4 /* UberLocation.swift in Sources */,

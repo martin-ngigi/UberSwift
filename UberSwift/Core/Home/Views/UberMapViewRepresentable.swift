@@ -43,6 +43,9 @@ struct UberMapViewRepresentable: UIViewRepresentable{
                 context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
             }
             break
+        case .polylineAdded:
+            print("DEBUG: polylineAdded, so do nothing. ")
+            break
         }
     }
     
@@ -115,6 +118,7 @@ extension UberMapViewRepresentable{
                 parent.locationSearchViewModel.getDestinationRoute(from: userLocationCoordinate,
                                 to: coordinate) { route in
                 self.parent.mapView.addOverlay(route.polyline)
+                self.parent.mapState = .polylineAdded
                 
                 // configure the view of card where the map will displayed. i.e. the height and with map to make it fit on the UI. Putting into consideration that there is UI below this Map for selecting uber and making payments.
                 let rect = self.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect, edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))
