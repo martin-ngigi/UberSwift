@@ -24,6 +24,7 @@
 		A35CFE3A2B4BF28A004BCFBB /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CFE392B4BF28A004BCFBB /* LocationSearchResultCell.swift */; };
 		A3B6AABB2B4FAF4600796CE4 /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6AABA2B4FAF4600796CE4 /* UberLocation.swift */; };
 		A3B6AABD2B4FB8E000796CE4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6AABC2B4FB8E000796CE4 /* Color.swift */; };
+		A3B6AABF2B4FC1E000796CE4 /* Readme.MD in Resources */ = {isa = PBXBuildFile; fileRef = A3B6AABE2B4FC1E000796CE4 /* Readme.MD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A35CFE392B4BF28A004BCFBB /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 		A3B6AABA2B4FAF4600796CE4 /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
 		A3B6AABC2B4FB8E000796CE4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A3B6AABE2B4FC1E000796CE4 /* Readme.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.MD; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		A35CFE002B4BBEC5004BCFBB = {
 			isa = PBXGroup;
 			children = (
+				A3B6AABE2B4FC1E000796CE4 /* Readme.MD */,
 				A35CFE0B2B4BBEC5004BCFBB /* UberSwift */,
 				A35CFE0A2B4BBEC5004BCFBB /* Products */,
 			);
@@ -280,6 +283,7 @@
 			files = (
 				A35CFE152B4BBEC8004BCFBB /* Preview Assets.xcassets in Resources */,
 				A35CFE112B4BBEC8004BCFBB /* Assets.xcassets in Resources */,
+				A3B6AABF2B4FC1E000796CE4 /* Readme.MD in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
